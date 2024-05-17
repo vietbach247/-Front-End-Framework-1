@@ -1,0 +1,8 @@
+.container {
+  margin-top: 50px; /* Khoảng cách từ top */
+}
+
+.header,
+.footer {
+  margin-bottom: 20px; /* Khoảng cách từ bottom */
+}

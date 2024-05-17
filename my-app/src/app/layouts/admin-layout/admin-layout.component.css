@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+
+  background-color: #343a40; /* Màu nền */
+  color: white;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: #343a40; /* Màu nền */
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+}

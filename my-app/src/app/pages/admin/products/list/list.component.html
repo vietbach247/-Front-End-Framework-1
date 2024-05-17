@@ -1,0 +1,57 @@
+<!-- src/app/product-list/product-list.component.html -->
+<h1>Danh sách sản phẩm</h1>
+<a [routerLink]="['/admin/products/create']">
+  <button class="btn btn-primary btn-sm">Add Product</button>
+</a>
+<div *ngIf="products.length > 0; else noProducts">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Stt</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Thumbnail</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Rating</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" class="product">
+        <td></td>
+        <td>{{ product.title }}</td>
+
+        <td>{{ product.description }}</td>
+        <td><img [src]="product.thumbnail" alt="{{ product.title }}" /></td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.stock }}</td>
+        <td>{{ product.rating }}</td>
+        <td>
+          <a [routerLink]="['/products/detail', product._id]">
+            <button class="btn btn-primary btn-sm">View</button>
+          </a>
+        </td>
+        <td>
+          <a [routerLink]="['/admin/products/edit', product._id]">
+            <button class="btn btn-primary btn-sm">Edit</button>
+          </a>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="handleDeleteProduct(product._id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noProducts>
+  <p>No products available.</p>
+</ng-template>

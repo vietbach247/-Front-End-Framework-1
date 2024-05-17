@@ -1,0 +1,34 @@
+.sidebar.extend {
+  width: 250px;
+  height: 100vh; /* Chiều cao bằng với chiều cao của trình duyệt */
+  position: fixed; /* Vị trí cố định để sidebar không bị cuộn khi cuộn trang */
+  /* Phía trên cùng của trang */
+  left: 0; /* Phía bên trái của trang */
+  background-color: #343a40; /* Màu nền của sidebar */
+  color: white; /* Màu chữ của sidebar */
+  overflow-y: auto; /* Hiển thị thanh cuộn khi nội dung vượt quá chiều cao */
+}
+
+.sidebar-nav {
+  list-style: none; /* Loại bỏ dấu chấm trước mỗi mục */
+  padding: 0; /* Loại bỏ padding mặc định */
+}
+
+.sidebar-nav li {
+  margin: 0; /* Loại bỏ margin mặc định */
+}
+
+.sidebar-nav li a {
+  display: block; /* Biến các liên kết thành phần phân cấp */
+  padding: 10px 20px; /* Padding cho mỗi mục */
+  color: white; /* Màu chữ */
+  text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+.sidebar-nav li a:hover {
+  background-color: #495057; /* Màu nền khi hover */
+}
+
+.active {
+  background-color: #6c757d; /* Màu nền của mục đang được chọn */
+}

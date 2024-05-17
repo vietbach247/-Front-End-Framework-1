@@ -1,0 +1,11 @@
+div {
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  color: blue; /* Màu chữ */
+  font-size: 24px; /* Kích thước chữ */
+  font-weight: bold; /* Đậm */
+  margin-top: 20px; /* Khoảng cách từ trên xuống */
+}

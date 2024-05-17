@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="content">
+    <div class="card">
+      <div class="card-body" *ngIf="product">
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+        <img
+          class="img-fluid"
+          [src]="product.thumbnail"
+          alt="{{ product.title }}"
+        />
+        <p><strong>Price:</strong> {{ product.price | currency }}</p>
+        <p><strong>Stock:</strong> {{ product.stock }}</p>
+        <p><strong>Rating:</strong> {{ product.rating }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+</div>

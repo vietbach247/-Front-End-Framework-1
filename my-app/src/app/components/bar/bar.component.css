@@ -1,0 +1,43 @@
+.navbar {
+  background-color: #343a40; /* Màu nền */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 250px;
+  height: 90px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  margin-right: 70px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Đặt top là 100% để menu xuất hiện ngay dưới ảnh */
+  left: 50%; /* Đặt left là 50% để menu xuất hiện ở giữa ảnh */
+  transform: translateX(-50%);
+}
+.dropdown-toggle::after {
+  display: none; /* Ẩn mũi tên chỉ xuống */
+}
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.logout-icon {
+  width: 30px; /* Điều chỉnh kích thước của ảnh đăng xuất */
+  height: 30px;
+}

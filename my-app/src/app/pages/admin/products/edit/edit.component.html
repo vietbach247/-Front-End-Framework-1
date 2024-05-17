@@ -1,0 +1,144 @@
+<!-- src/app/pages/admin/products/edit/edit.component.html -->
+
+<div class="container mt-5">
+  <h2>Edit Product</h2>
+  <form (ngSubmit)="updateProduct()" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="product.title"
+        name="title"
+        required
+      />
+      <div class="invalid-feedback">Please enter the product title.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        [(ngModel)]="product.description"
+        name="description"
+        rows="3"
+        required
+      ></textarea>
+      <div class="invalid-feedback">Please enter the product description.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="thumbnail" class="form-label">Thumbnail URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="thumbnail"
+        [(ngModel)]="product.thumbnail"
+        name="thumbnail"
+        required
+      />
+      <div class="invalid-feedback">Please enter the thumbnail URL.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        [(ngModel)]="product.price"
+        name="price"
+        required
+      />
+      <div class="invalid-feedback">Please enter the product price.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="stock" class="form-label">Stock</label>
+      <input
+        type="number"
+        class="form-control"
+        id="stock"
+        [(ngModel)]="product.stock"
+        name="stock"
+        required
+      />
+      <div class="invalid-feedback">Please enter the product stock.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input
+        type="number"
+        step="0.1"
+        class="form-control"
+        id="rating"
+        [(ngModel)]="product.rating"
+        name="rating"
+        required
+      />
+      <div class="invalid-feedback">Please enter the product rating.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <input
+        type="text"
+        class="form-control"
+        id="category"
+        [(ngModel)]="product.category"
+        name="category"
+        required
+      />
+      <div class="invalid-feedback">Please enter the product category.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="brand" class="form-label">Brand</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brand"
+        [(ngModel)]="product.brand"
+        name="brand"
+        required
+      />
+      <div class="invalid-feedback">Please enter the product brand.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="discountPercentage" class="form-label"
+        >Discount Percentage</label
+      >
+      <input
+        type="number"
+        step="0.1"
+        class="form-control"
+        id="discountPercentage"
+        [(ngModel)]="product.discountPercentage"
+        name="discountPercentage"
+        required
+      />
+      <div class="invalid-feedback">Please enter the discount percentage.</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="images" class="form-label"
+        >Images URL (comma separated)</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="images"
+        [(ngModel)]="product.images"
+        name="images"
+        required
+      />
+      <div class="invalid-feedback">Please enter the images URL.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Product</button>
+  </form>
+</div>

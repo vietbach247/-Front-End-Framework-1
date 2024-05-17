@@ -1,0 +1,18 @@
+/* Thiết lập margin cho table */
+.table {
+  margin-top: 20px;
+}
+
+/* Tùy chỉnh màu của nút Edit */
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Tùy chỉnh màu của nút Delete */
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
