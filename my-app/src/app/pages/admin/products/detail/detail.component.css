@@ -1,8 +1,57 @@
-.container {
-  margin-top: 50px; /* Khoảng cách từ top */
+.image-container {
+  border: 2px solid #000; /* Màu khung, bạn có thể thay đổi theo ý muốn */
+  padding: 10px; /* Khoảng cách giữa ảnh và khung */
+  border-radius: 10px; /* Độ bo góc của khung */
+  display: inline-block; /* Đảm bảo khung bao quanh nội dung ảnh */
 }
 
-.header,
-.footer {
-  margin-bottom: 20px; /* Khoảng cách từ bottom */
+.image-container img {
+  display: block; /* Đảm bảo ảnh không bị ảnh hưởng bởi các phần tử khác */
+  border-radius: 10px; /* Bo góc ảnh, nên bằng với border-radius của container */
+  max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước khung */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.image-container {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container img {
+  display: block;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.recipe-details {
+  padding: 20px;
+}
+
+.recipe-title {
+  font-size: 2rem;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.recipe-info p {
+  margin: 10px 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.recipe-info p strong {
+  color: #555;
 }

@@ -4,8 +4,35 @@ import { ProductListComponent } from './pages/admin/products/list/list.component
 import { ProductDetailComponent } from './pages/admin/products/detail/detail.component';
 import { ProductCreateComponent } from './pages/admin/products/create/create.component'; // Import component for create
 import { ProductEditComponent } from './pages/admin/products/edit/edit.component';
+import { ProductLayoutComponent } from './layouts/product-layout/product-layout.component';
+import { ProductHomeComponent } from './pages/product/home/home.component';
+import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
+import { LoginComponent } from './pages/product/login/login.component';
+import { RegisterComponent } from './pages/product/register/register.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: ProductLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: ProductHomeComponent,
+      },
+      {
+        path: 'detail/:id',
+        component: ProductDetailComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
+    ],
+  },
   {
     path: 'admin',
     component: AdminLayoutComponent,
@@ -14,10 +41,7 @@ export const routes: Routes = [
         path: 'products/list',
         component: ProductListComponent,
       },
-      {
-        path: 'products/detail/:id',
-        component: ProductDetailComponent,
-      },
+
       {
         path: 'products/edit/:id',
         component: ProductEditComponent,
@@ -29,15 +53,7 @@ export const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'products/detail/:id',
-    component: ProductDetailComponent,
+  { path: 'not-found', component: NotFoundComponentComponent },
 
-    children: [
-      {
-        path: 'detail/:id',
-        component: ProductDetailComponent,
-      },
-    ],
-  },
+  { path: '**', redirectTo: '/not-found' },
 ];

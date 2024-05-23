@@ -1,24 +1,19 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
+<div class="grid grid-cols-2 gap-6 my-6">
+  <div class="image-container">
+    <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
   </div>
-  <div class="content">
-    <div class="card">
-      <div class="card-body" *ngIf="product">
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.description }}</p>
-        <img
-          class="img-fluid"
-          [src]="product.thumbnail"
-          alt="{{ product.title }}"
-        />
-        <p><strong>Price:</strong> {{ product.price | currency }}</p>
-        <p><strong>Stock:</strong> {{ product.stock }}</p>
-        <p><strong>Rating:</strong> {{ product.rating }}</p>
-      </div>
+  <div class="product-details">
+    <h1 class="product-title">{{ product.title }}</h1>
+    <div class="product-info">
+      <p><strong>Description:</strong> {{ product.description }}</p>
+      <p><strong>Price:</strong> ${{ product.price }}</p>
+      <p>
+        <strong>Discount Percentage:</strong> {{ product.discountPercentage }}%
+      </p>
+      <p><strong>Rating:</strong> {{ product.rating }} stars</p>
+      <p><strong>Stock:</strong> {{ product.stock }}</p>
+      <p><strong>Brand:</strong> {{ product.brand }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
     </div>
-  </div>
-  <div class="footer">
-    <app-footer></app-footer>
   </div>
 </div>

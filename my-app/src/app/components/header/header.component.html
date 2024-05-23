@@ -1,30 +1,70 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">FPoly Product Manager</a>
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Product list</a>
-    </li>
-  </ul>
-  <ul class="nav navbar-nav ml-auto">
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        id="navbardrop"
-        data-toggle="dropdown"
+<div class="bg-red-800 text-black py-3">
+  <div class="container mx-auto flex justify-between">
+    <div class="flex items-center h-auto ml-36">
+      <img
+        src="https://www.pizzaexpress.vn/wp-content/uploads/2018/05/logo.png"
+        alt="Logo"
+        class="autofill: mr-20"
+      />
+      <p
+        class="text-sm mx-2 text-white hover:text-red-700 transition duration-500"
       >
-        Manager
+        Đồ rẻ - Giá ngon - Vận chuyển tận nhà
+      </p>
+    </div>
+    <div class="flex items-center h-auto mr-36"></div>
+  </div>
+</div>
+
+<div class="bg-white-900 text-black py-7">
+  <div class="container mx-auto flex justify-center items-center">
+    <div class="flex items-center h-auto">
+      <p
+        class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
+      >
+        TRANG CHỦ
+      </p>
+      <a
+        href="http://localhost:4200/dish"
+        class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
+      >
+        SẢN PHẨM
       </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Login</a>
-        <a class="dropdown-item" href="#">Cart</a>
-      </div>
-    </li>
-  </ul>
-</nav>
+
+      <p
+        class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
+      >
+        KHUYẾN MÃI
+      </p>
+      <p
+        class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
+      >
+        CHÍNH SÁCH
+      </p>
+      <p
+        class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
+      >
+        BLOG
+      </p>
+      <p
+        class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
+      >
+        LIÊN HỆ
+      </p>
+      <a [routerLink]="['/login']">
+        <p
+          class="text-sm px-3 py-1 ml-4 bg-white text-gray-700 border border-gray-700 rounded-lg hover:bg-gray-600 transition duration-300"
+        >
+          Đăng nhập
+        </p>
+      </a>
+      <a [routerLink]="['/register']">
+        <p
+          class="text-sm px-3 py-1 ml-4 bg-white text-gray-700 border border-gray-700 rounded-lg hover:bg-gray-600 transition duration-300"
+        >
+          Đăng ký
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,22 @@
-<!-- src/app/product-list/product-list.component.html -->
 <h1>Danh sách sản phẩm</h1>
 <a [routerLink]="['/admin/products/create']">
   <button class="btn btn-primary btn-sm">Add Product</button>
 </a>
+
+<div class="search-container">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search products..."
+    [(ngModel)]="searchTerm"
+    (input)="onInputChange()"
+    (change)="onInputChange()"
+  />
+  <button class="btn btn-primary btn-sm" (click)="searchProducts()">
+    Search
+  </button>
+</div>
+
 <div *ngIf="products.length > 0; else noProducts">
   <table class="table">
     <thead>
@@ -20,17 +34,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products" class="product">
-        <td></td>
+      <tr *ngFor="let product of products; let i = index" class="product">
+        <td>{{ i + 1 }}</td>
         <td>{{ product.title }}</td>
-
         <td>{{ product.description }}</td>
         <td><img [src]="product.thumbnail" alt="{{ product.title }}" /></td>
         <td>{{ product.price | currency }}</td>
         <td>{{ product.stock }}</td>
         <td>{{ product.rating }}</td>
         <td>
-          <a [routerLink]="['/products/detail', product._id]">
+          <a [routerLink]="['/detail', product._id]">
             <button class="btn btn-primary btn-sm">View</button>
           </a>
         </td>

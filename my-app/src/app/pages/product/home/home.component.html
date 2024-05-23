@@ -1,0 +1,30 @@
+<h1 class="font-bold my-6 text-3xl text-center">Danh sách sản phẩm</h1>
+<div class="search-container">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Tìm kiếm sản phẩm..."
+    [(ngModel)]="searchTerm"
+    (input)="onInputChange()"
+  />
+  <button class="btn btn-primary btn-sm" (click)="searchProducts()">
+    Tìm kiếm
+  </button>
+</div>
+<div class="grid grid-cols-5 gap-4">
+  <div class="item" *ngFor="let product of products">
+    <div class="product-item">
+      <a [routerLink]="['/product', product._id]">
+        <img [src]="product.thumbnail" [alt]="product.title" />
+      </a>
+      <h3 class="product-name">
+        <a [routerLink]="['/detail', product._id]">{{ product.title }}</a>
+      </h3>
+      <div class="details-button">
+        <a [routerLink]="['/detail', product._id]" class="btn-details"
+          >Xem Chi Tiết</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
