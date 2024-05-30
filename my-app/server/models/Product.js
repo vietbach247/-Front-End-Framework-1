@@ -1,3 +1,4 @@
+// models/Product.js
 import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema({
@@ -41,8 +42,6 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
-  // Add any other required fields
 });
 
 const Product = mongoose.model("Product", productSchema);

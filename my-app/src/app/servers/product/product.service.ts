@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Product } from '../../types/Product';
 import { Router } from '@angular/router';
+import { Product } from '../../../types/Product';
 
 @Injectable({
   providedIn: 'root',
@@ -69,11 +69,9 @@ export class ProductService {
     if (error.error instanceof ErrorEvent) {
       errorMessage = `Lỗi phía client: ${error.error.message}`;
     } else {
-      errorMessage = `Server trả về mã lỗi: ${error.status}, thông báo lỗi: ${error.message}`;
+      errorMessage = `  ${error.error.message || error.message}`;
     }
-    console.error(errorMessage);
-
-    alert('Đã xảy ra lỗi. Vui lòng thử lại sau.');
+    console.error('thông báo lỗi:' + errorMessage);
 
     if (error.status === 404) {
       this.router.navigate(['/not-found']);

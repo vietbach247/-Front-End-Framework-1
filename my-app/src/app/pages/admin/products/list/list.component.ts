@@ -1,7 +1,7 @@
 import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../../../types/Product';
-import { ProductService } from '../../../../servers/product.service';
+import { ProductService } from '../../../../servers/product/product.service';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -41,8 +41,6 @@ export class ProductListComponent implements OnInit {
     }
   }
   onInputChange(): void {
-    // tự tìm kiếm trong 1s
-
     clearTimeout(this.searchTimeout);
     this.searchTimeout = setTimeout(() => {
       this.searchProducts();

@@ -1,0 +1,8 @@
+<div class="profile-container">
+  <h1>Hồ Sơ Cá Nhân</h1>
+  <div *ngIf="user">
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Tên:</strong> {{ user.name }}</p>
+  </div>
+  <button [routerLink]="['/']" class="home-button">Trở về trang chủ</button>
+</div>

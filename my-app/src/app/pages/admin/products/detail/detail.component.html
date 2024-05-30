@@ -1,19 +1,55 @@
-<div class="grid grid-cols-2 gap-6 my-6">
-  <div class="image-container">
-    <img src="{{ product.thumbnail }}" alt="{{ product.title }}" />
+<div class="product-detail-container">
+  <div class="product-content">
+    <div class="product-images">
+      <img
+        class="main-image"
+        [src]="product?.thumbnail"
+        alt="{{ product?.title }}"
+      />
+      <div class="thumbnail-images">
+        <img
+          *ngFor="let image of product?.images?.split(',')"
+          [src]="image"
+          alt="{{ product?.title }}"
+        />
+      </div>
+    </div>
+    <div class="product-details">
+      <h1 class="product-title">{{ product?.title }}</h1>
+      <p class="product-code">Mã sản phẩm: {{ product?._id }}</p>
+      <div class="product-price">
+        <span class="price">{{
+          product?.price | currency : "VND" : "symbol" : "1.0-0"
+        }}</span>
+        <span class="tax">(Đã có VAT)</span>
+      </div>
+      <div class="product-description">
+        <p>{{ product?.description }}</p>
+      </div>
+      <div class="product-info">
+        <p><strong>Giảm giá:</strong> {{ product?.discountPercentage }}%</p>
+        <p><strong>Đánh giá:</strong> {{ product?.rating }} sao</p>
+        <p><strong>Còn hàng:</strong> {{ product?.stock }}</p>
+        <p><strong>Thương hiệu:</strong> {{ product?.brand }}</p>
+        <p><strong>Danh mục:</strong> {{ product?.category }}</p>
+      </div>
+
+      <button class="buy-now-btn">MUA NGAY</button>
+    </div>
   </div>
-  <div class="product-details">
-    <h1 class="product-title">{{ product.title }}</h1>
-    <div class="product-info">
-      <p><strong>Description:</strong> {{ product.description }}</p>
-      <p><strong>Price:</strong> ${{ product.price }}</p>
-      <p>
-        <strong>Discount Percentage:</strong> {{ product.discountPercentage }}%
-      </p>
-      <p><strong>Rating:</strong> {{ product.rating }} stars</p>
-      <p><strong>Stock:</strong> {{ product.stock }}</p>
-      <p><strong>Brand:</strong> {{ product.brand }}</p>
-      <p><strong>Category:</strong> {{ product.category }}</p>
+  <div class="sidebar">
+    <div class="shipping-info">
+      <p>GIAO HÀNG MIỄN PHÍ</p>
+    </div>
+    <div class="return-info">
+      <p>ĐỔI TRẢ MIỄN PHÍ</p>
+    </div>
+    <div class="payment-info">
+      <p>THANH TOÁN</p>
+    </div>
+    <div class="contact-info">
+      <p>HỖ TRỢ MUA NHANH: 0123456789</p>
+      <p>8:30 - 21:30 mỗi ngày</p>
     </div>
   </div>
 </div>

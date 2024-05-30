@@ -1,18 +1,30 @@
 <div class="bg-red-800 text-black py-3">
   <div class="container mx-auto flex justify-between">
     <div class="flex items-center h-auto ml-36">
-      <img
-        src="https://www.pizzaexpress.vn/wp-content/uploads/2018/05/logo.png"
-        alt="Logo"
-        class="autofill: mr-20"
-      />
+      <a [routerLink]="['/']">
+        <img
+          src="https://www.pizzaexpress.vn/wp-content/uploads/2018/05/logo.png"
+          alt="Logo"
+          class="mr-20"
+        />
+      </a>
+
       <p
         class="text-sm mx-2 text-white hover:text-red-700 transition duration-500"
       >
         Đồ rẻ - Giá ngon - Vận chuyển tận nhà
       </p>
     </div>
-    <div class="flex items-center h-auto mr-36"></div>
+    <div class="flex items-center h-auto mr-36">
+      <a [routerLink]="['/profile']">
+        <p class="text-sm text-white" *ngIf="name">Xin chào, {{ name }}!</p>
+      </a>
+      <p
+        class="text-sm px-3 py-1 ml-4 bg-white text-gray-700 border border-gray-700 rounded-lg hover:bg-gray-600 transition duration-300"
+      >
+        <button (click)="logout()">Logout</button>
+      </p>
+    </div>
   </div>
 </div>
 
@@ -30,7 +42,6 @@
       >
         SẢN PHẨM
       </a>
-
       <p
         class="text-sm mx-4 text-opacity-60 hover:text-red-700 transition duration-500"
       >
@@ -51,20 +62,6 @@
       >
         LIÊN HỆ
       </p>
-      <a [routerLink]="['/login']">
-        <p
-          class="text-sm px-3 py-1 ml-4 bg-white text-gray-700 border border-gray-700 rounded-lg hover:bg-gray-600 transition duration-300"
-        >
-          Đăng nhập
-        </p>
-      </a>
-      <a [routerLink]="['/register']">
-        <p
-          class="text-sm px-3 py-1 ml-4 bg-white text-gray-700 border border-gray-700 rounded-lg hover:bg-gray-600 transition duration-300"
-        >
-          Đăng ký
-        </p>
-      </a>
     </div>
   </div>
 </div>

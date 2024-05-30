@@ -1,57 +1,109 @@
-.image-container {
-  border: 2px solid #000; /* Màu khung, bạn có thể thay đổi theo ý muốn */
-  padding: 10px; /* Khoảng cách giữa ảnh và khung */
-  border-radius: 10px; /* Độ bo góc của khung */
-  display: inline-block; /* Đảm bảo khung bao quanh nội dung ảnh */
-}
-
-.image-container img {
-  display: block; /* Đảm bảo ảnh không bị ảnh hưởng bởi các phần tử khác */
-  border-radius: 10px; /* Bo góc ảnh, nên bằng với border-radius của container */
-  max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước khung */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-.grid {
-  max-width: 1200px;
-  margin: 0 auto;
+.product-detail-container {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
-.image-container {
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.header {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
 
-.image-container img {
-  display: block;
-  max-width: 100%;
-  border-radius: 10px;
+.product-content {
+  display: flex;
+  width: 70%;
 }
 
-.recipe-details {
+.product-images {
+  width: 60%;
+}
+
+.product-images img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.thumbnail-images img {
+  width: 48%;
+  margin-right: 4%;
+  cursor: pointer;
+}
+
+.product-details {
+  width: 50%;
   padding: 20px;
 }
 
-.recipe-title {
-  font-size: 2rem;
-  color: #e63946;
+.product-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.product-code {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.recipe-info p {
-  margin: 10px 0;
-  font-size: 1.125rem;
-  line-height: 1.5;
+.product-price .price {
+  font-size: 24px;
+  color: red;
+  margin-right: 10px;
 }
 
-.recipe-info p strong {
-  color: #555;
+.product-description {
+  margin-bottom: 20px;
+}
+
+.product-info p {
+  margin-bottom: 5px;
+}
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-quantity .quantity-btn {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.product-quantity input {
+  width: 50px;
+  text-align: center;
+}
+
+.buy-now-btn {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-now-btn:hover {
+  background-color: darkred;
+}
+
+.sidebar {
+  width: 25%;
+  padding: 20px;
+}
+
+.sidebar div {
+  margin-bottom: 20px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #ddd;
 }

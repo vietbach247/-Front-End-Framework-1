@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../../types/Product';
-import { ProductService } from '../../../servers/product.service';
+import { ProductService } from '../../../servers/product/product.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';

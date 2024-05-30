@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../../../../types/Product';
-import { ProductService } from '../../../../servers/product.service';
+import { ProductService } from '../../../../servers/product/product.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProductEditComponent implements OnInit {
   product: Product = {
     title: '',
     description: '',
-    image: '',
+    images: '',
     thumbnail: '',
     category: '',
     brand: '',

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Product } from '../../../../../types/Product';
-import { ProductService } from '../../../../servers/product.service';
+import { ProductService } from '../../../../servers/product/product.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
 })
@@ -15,7 +16,7 @@ export class ProductCreateComponent {
   product: Product = {
     title: '',
     description: '',
-    image: '', // Note: Changed to `images` to be consistent
+    images: '',
     thumbnail: '',
     category: '',
     brand: '',
@@ -24,6 +25,7 @@ export class ProductCreateComponent {
     discountPercentage: 0,
     price: 0,
   };
+  errorMessage: string = '';
 
   constructor(private productService: ProductService, private router: Router) {}
 
@@ -35,7 +37,7 @@ export class ProductCreateComponent {
         this.router.navigate(['/admin/products/list']);
       },
       (error) => {
-        alert('Error creating product:' + error.message);
+        this.errorMessage = error;
       }
     );
   }

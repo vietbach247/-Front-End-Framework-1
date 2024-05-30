@@ -1,1 +1,61 @@
-<p>register works!</p>
+<div class="container">
+  <div class="register-container">
+    <div class="register-box">
+      <h1>Đăng Ký</h1>
+      <form (ngSubmit)="register()">
+        <div class="input-group">
+          <label for="username">Tên Đăng Nhập</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">Mật Khẩu</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="confirm-password">Xác Nhận Mật Khẩu</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            [(ngModel)]="confirmPassword"
+            required
+          />
+        </div>
+        <button type="submit">Đăng Ký</button>
+      </form>
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      <div class="footer">
+        <p>Đã có tài khoản? <a [routerLink]="['/login']">Đăng Nhập</a></p>
+        <p>
+          <a [routerLink]="['/forgotPassword']">Quên Mật Khẩu?</a>
+        </p>
+        <a [routerLink]="['/']" class="home-button">Quay lại trang chủ</a>
+      </div>
+    </div>
+  </div>
+</div>

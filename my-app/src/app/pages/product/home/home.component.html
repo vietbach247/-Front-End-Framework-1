@@ -14,7 +14,7 @@
 <div class="grid grid-cols-5 gap-4">
   <div class="item" *ngFor="let product of products">
     <div class="product-item">
-      <a [routerLink]="['/product', product._id]">
+      <a [routerLink]="['/detail', product._id]">
         <img [src]="product.thumbnail" [alt]="product.title" />
       </a>
       <h3 class="product-name">

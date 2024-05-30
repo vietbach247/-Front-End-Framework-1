@@ -138,6 +138,9 @@
       />
       <div class="invalid-feedback">Please enter the images URL.</div>
     </div>
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
 
     <button type="submit" class="btn btn-primary">Create Product</button>
   </form>

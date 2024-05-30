@@ -9,11 +9,15 @@ import { ProductHomeComponent } from './pages/product/home/home.component';
 import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 import { LoginComponent } from './pages/product/login/login.component';
 import { RegisterComponent } from './pages/product/register/register.component';
+import { ForgotPasswordComponent } from './pages/product/forgot-password/forgot-password.component';
+import { AuthGuard } from './pages/product/login/auth.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: ProductLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -22,14 +26,6 @@ export const routes: Routes = [
       {
         path: 'detail/:id',
         component: ProductDetailComponent,
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
       },
     ],
   },
@@ -53,6 +49,21 @@ export const routes: Routes = [
       },
     ],
   },
+
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'forgotPassword',
+    component: ForgotPasswordComponent,
+  },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+
   { path: 'not-found', component: NotFoundComponentComponent },
 
   { path: '**', redirectTo: '/not-found' },
